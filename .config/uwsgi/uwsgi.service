@@ -1,0 +1,17 @@
+/home/ubuntu/.local/share/virtualenvs/srv-aJkxQl9A
+
+[Unit]
+Description=uWSGI service
+After=syslog.target
+
+[Service]
+ExecStart=/home/ubuntu/.local/share/virtualenvs/uwsgi-env-G6PGXLoX/bin/uwsgi -i /home/ubuntu/srv/.config/uwsgi/mystar.ini
+
+Restart=always
+KillSignal=SIGQUIT
+Type=notify
+StandardError=syslog
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target
